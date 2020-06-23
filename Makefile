@@ -1,11 +1,11 @@
 OUT_ZIP=ubuntuCloud.zip
-LNCR_EXE=Ubuntu.exe
+LNCR_EXE=ubuntuCloud.exe
 
 DLR=curl
 DLR_FLAGS=-L
 BASE_URL=https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-wsl.rootfs.tar.gz
 LNCR_ZIP_URL=https://github.com/yuk7/wsldl/releases/download/20040300/icons.zip
-LNCR_ZIP_EXE=ubuntuCloud.exe
+LNCR_ZIP_EXE=Ubuntu.exe
 
 PLANTUML_URL=http://sourceforge.net/projects/plantuml/files/plantuml.jar/download
 ACROTEX_URL=http://mirrors.ctan.org/macros/latex/contrib/acrotex.zip
