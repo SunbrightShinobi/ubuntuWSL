@@ -1,5 +1,5 @@
 OUT_ZIP=ubuntuCloud.zip
-LNCR_EXE=ubuntuCloud.exe
+LNCR_EXE=Ubuntu.exe
 
 DLR=curl
 DLR_FLAGS=-L
