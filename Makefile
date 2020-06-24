@@ -104,8 +104,7 @@ rootfs: base.tar.gz profile
 		gnome-keyring \
 		desktop-file-utils
 	sudo chroot rootfs /bin/apt upgrade -y \
-		java-common \
-		ca-certificates-java
+		java-common
 	sudo chroot rootfs /bin/apt upgrade -y \
 		ghc
 	sudo -H chroot rootfs /usr/bin/python3 -m pip install --upgrade \
