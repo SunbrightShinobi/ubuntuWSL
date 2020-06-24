@@ -72,6 +72,8 @@ rootfs: base.tar.gz profile
 		neofetch \
 		openssh-client \
 		nano \
+		openssl
+	sudo chroot rootfs /bin/apt upgrade -y \
 		gcc \
 		ghc \
 		libgmp10 \
@@ -81,26 +83,28 @@ rootfs: base.tar.gz profile
 		zlib1g-dev \
 		libjpeg-dev \
 		dvipng \
+		ghostscript \
+		openjdk-11-jre-headless \
+		graphviz \
+		xvfb \
+		ruby
+	sudo chroot rootfs /bin/apt upgrade -y \
 		python3 \
 		python3-pip \
 		python3-dev \
 		cython \
 		python3-numpy \
-		python3-numpy-dev \
-		graphviz \
-		openjdk-11-jre-headless \
-		ghostscript \
-		ttf-dejavu
+		python3-numpy-dev
+	sudo chroot rootfs /bin/apt upgrade -y \
+		ttf-dejavu \
 		texlive-latex-recommended \
 		texlive-latex-extra
-		openssl \
+	sudo chroot rootfs /bin/apt upgrade -y \
 		libicu66 \
 		libkrb5-3 \
 		libsecret-common \
 		gnome-keyring \
-		desktop-file-utils \
-		xvfb \
-		ruby
+		desktop-file-utils
 	sudo -H chroot rootfs /usr/bin/python3 -m pip install --upgrade \
 		pip \
 		wheel
