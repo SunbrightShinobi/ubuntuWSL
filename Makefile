@@ -105,8 +105,6 @@ rootfs: base.tar.gz profile
 		desktop-file-utils
 	sudo chroot rootfs /bin/apt upgrade -y \
 		java-common
-	sudo chroot rootfs /bin/apt upgrade -y \
-		ghc
 	sudo -H chroot rootfs /usr/bin/python3 -m pip install --upgrade \
 		pip \
 		wheel
