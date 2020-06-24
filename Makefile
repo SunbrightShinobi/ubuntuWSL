@@ -105,7 +105,7 @@ rootfs: base.tar.gz profile
 		desktop-file-utils
 	sudo chroot rootfs /bin/apt upgrade -y \
 		java-common \
-		fprintd \
+		fprintd
 	sudo chroot rootfs /bin/apt upgrade -y \
 		libfprint-2-2:amd64 \
 		libpam-fprintd:amd64
