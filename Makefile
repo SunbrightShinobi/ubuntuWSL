@@ -75,7 +75,6 @@ rootfs: base.tar.gz profile
 		openssl
 	sudo chroot rootfs /bin/apt upgrade -y \
 		gcc \
-		ghc \
 		libgmp10 \
 		libffi7 \
 		musl-dev \
@@ -84,7 +83,6 @@ rootfs: base.tar.gz profile
 		libjpeg-dev \
 		dvipng \
 		ghostscript \
-		openjdk-11-jre-headless \
 		graphviz \
 		xvfb \
 		ruby
@@ -105,6 +103,9 @@ rootfs: base.tar.gz profile
 		libsecret-common \
 		gnome-keyring \
 		desktop-file-utils
+	sudo chroot rootfs /bin/apt upgrade -y \
+		openjdk-11-jre-headless \
+		ghc
 	sudo -H chroot rootfs /usr/bin/python3 -m pip install --upgrade \
 		pip \
 		wheel
