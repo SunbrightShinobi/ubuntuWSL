@@ -104,7 +104,7 @@ rootfs: base.tar.gz profile
 		gnome-keyring \
 		desktop-file-utils
 	sudo chroot rootfs /bin/apt upgrade -y \
-		java-common
+		java-common \
 		ca-certificates-java
 	sudo chroot rootfs /bin/apt upgrade -y \
 		ghc
