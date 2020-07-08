@@ -9,7 +9,7 @@ LNCR_ZIP_EXE=Ubuntu.exe
 
 PLANTUML_URL=http://sourceforge.net/projects/plantuml/files/plantuml.jar/download
 ACROTEX_URL=http://mirrors.ctan.org/macros/latex/contrib/acrotex.zip
-DRAWIO_URL=https://github.com/jgraph/drawio-desktop/releases/download/v13.2.4/draw.io-amd64-13.2.4.deb
+DRAWIO_URL=https://github.com/jgraph/drawio-desktop/releases/download/v13.3.5/draw.io-amd64-13.3.5.deb
 
 INSTALL_PS_SCRIPT=https://raw.githubusercontent.com/binarylandscapes/ubuntuWSL/$(BRANCH)/install.ps1
 FEATURE_PS_SCRIPT=https://raw.githubusercontent.com/binarylandscapes/ubuntuWSL/$(BRANCH)/addWSLfeature.ps1
