@@ -103,12 +103,6 @@ rootfs: base.tar.gz profile
 		libsecret-common \
 		gnome-keyring \
 		desktop-file-utils
-	#sudo chroot rootfs /bin/apt upgrade -y \
-		java-common \
-		fprintd
-	#sudo chroot rootfs /bin/apt upgrade -y \
-		libfprint-2-2:amd64 \
-		libpam-fprintd:amd64
 	sudo -H chroot rootfs /usr/bin/python3 -m pip install --upgrade \
 		pip \
 		wheel
