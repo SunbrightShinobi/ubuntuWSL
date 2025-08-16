@@ -139,8 +139,8 @@ sphinxcontrib.seqdiag \
 sphinxcontrib.nwdiag \
 sphinxcontrib.blockdiag \
 sphinxcontrib.actdiag \
-sphinxcontrib-mermaid\
-exceptiongroup<1.2.0 \
+sphinxcontrib-mermaid \
+'exceptiongroup<1.2.0' \
 loguru \
 myst_parser
 
