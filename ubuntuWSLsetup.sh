@@ -3,6 +3,7 @@
 read -p "Enter email to use with Git Configuration: " email
 read -p "Enter Git Username to use with Git Configuration: " gitUserName
 
+USER=joshjohnson
 DLR=curl
 DLR_FLAGS=-L
 ACROTEX_URL=http://mirrors.ctan.org/macros/latex/contrib/acrotex.zip
@@ -18,7 +19,7 @@ sudo apt upgrade -y
 
 read -p "Press any key to Install/Upgrade base apps ..."
 
-sudo apt upgrade -y \
+sudo apt install -y \
 bash \
 bash-completion \
 coreutils \
@@ -35,7 +36,7 @@ nano
 
 read -p "Press any key to Install/Upgrade dev apps ..."
 
-sudo apt upgrade -y \
+sudo apt install -y \
 gcc \
 ghc \
 libgmp10 \
@@ -48,8 +49,11 @@ dvipng
 
 read -p "Press any key to Install/Upgrade Python3, Cython, Numpy, Graphviz, Java, Ghostscript and Fonts ..."
 
-sudo apt upgrade -y \
+sudo apt install -y \
 python3 \
+python3-pipx \
+python3-pip \
+python3-wheel \
 python3-full \
 python3-dev \
 python3-venv \
@@ -64,7 +68,7 @@ fonts-dejavu
 
 read -p "Press any key to Install/Upgrade texlive ..."
 
-sudo apt upgrade -y \
+sudo apt install -y \
 texlive-latex-recommended \
 texlive-latex-extra \
 texlive-font-utils \
@@ -72,9 +76,9 @@ latexmk
 
 read -p "Press any key to resume ..."
 
-sudo apt upgrade -y \
+sudo apt install -y \
 openssl \
-libicu74 \
+libicu70 \
 libkrb5-3 \
 libsecret-common \
 gnome-keyring \
@@ -82,9 +86,8 @@ desktop-file-utils \
 xvfb \
 plantuml \
 docker.io \
-podman-docker \
 npm \
-chromium
+chromium-bsu
 
 sudo addgroup docker
 sudo usermod -a -G docker $USER
@@ -94,57 +97,55 @@ read -p "Press any key to Install DrawIO ..."
 sudo $DLR $DLR_FLAGS $DRAWIO_URL \
 -o /tmp/draw.io.deb
 
-sudo apt upgrade -y \
-/tmp/draw.io.deb
+sudo dpkg -i /tmp/draw.io.deb
 
-npm install \
+sudo npm install \
 npx puppeteer browsers install chrome
 
-npm install \
+sudo npm install \
 -g @mermaid-js/mermaid-cli
 
 read -p "Press any key to Install Sphinx Python3 Packages ..."
 
 sudo python3 -m pip install \
---upgrade --upgrade-strategy only-if-needed --ignore-installed --break-system-package \
-sphinx==7.2.6 \
-sphinx-autobuild==2024.2.4 \
-sphinx-jinja==2.0.2 \
-netaddr \
-gitpython \
-sphinx-git \
-sphinx_rtd_theme \
-plantuml \
-sphinxcontrib-plantuml \
-reportlab \
-colorama \
-xlsxwriter \
-pandas \
-vscod \
-tablib \
-ciscoconfparse \
-sphinxcontrib-jupyter \
-sphinxcontrib-confluencebuilder \
-pyyaml \
-yamlreader==3.0.4 \
-sphinxcontrib-drawio==0.0.17 \
-sphinxcontrib-drawio-html==0.1.2 \
-sphinx-markdown-builder \
-sphinxcontrib-fulltoc \
-rinohtype==0.5.4 \
-sphinxcontrib-bibtex \
-kroki \
-sphinxcontrib-kroki \
-sphinxcontrib.seqdiag \
-sphinxcontrib.nwdiag \
-sphinxcontrib.blockdiag \
-sphinxcontrib.actdiag \
-sphinxcontrib-mermaid \
-'exceptiongroup<1.2.0' \
-loguru \
-myst_parser
-
-nety \ fails
+  --upgrade \
+  --upgrade-strategy only-if-needed \
+  --ignore-installed \
+  sphinx==7.2.6 \
+  sphinx-autobuild==2024.2.4 \
+  sphinx-jinja==2.0.2 \
+  netaddr \
+  gitpython \
+  sphinx-git \
+  sphinx_rtd_theme \
+  plantuml \
+  sphinxcontrib-plantuml \
+  reportlab \
+  colorama \
+  xlsxwriter \
+  pandas \
+  tablib \
+  ciscoconfparse \
+  sphinxcontrib-jupyter \
+  sphinxcontrib-confluencebuilder \
+  pyyaml \
+  yamlreader==3.0.4 \
+  sphinxcontrib-drawio==0.0.17 \
+  sphinxcontrib-drawio-html==0.1.2 \
+  sphinx-markdown-builder \
+  sphinxcontrib-fulltoc \
+  rinohtype==0.5.4 \
+  sphinxcontrib-bibtex \
+  kroki \
+  sphinxcontrib-kroki \
+  sphinxcontrib.seqdiag \
+  sphinxcontrib.nwdiag \
+  sphinxcontrib.blockdiag \
+  sphinxcontrib.actdiag \
+  sphinxcontrib-mermaid \
+  'exceptiongroup<1.2.0' \
+  loguru \
+  myst_parser
 
 read -p "Press any key to Install Acrotex ..."
 
