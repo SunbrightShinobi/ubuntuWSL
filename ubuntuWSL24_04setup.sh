@@ -3,9 +3,6 @@
 read -p "Enter email to use with Git Configuration: " email
 read -p "Enter Git Username to use with Git Configuration: " gitUserName
 
-DLR=curl
-DRAWIO_URL=https://github.com/jgraph/drawio-desktop/releases/download/v29.3.0/drawio-amd64-29.3.0.deb
-
 sudo apt update -y
 sudo apt upgrade -y
 
