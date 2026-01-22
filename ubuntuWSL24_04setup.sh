@@ -103,7 +103,7 @@ sphinxcontrib.seqdiag \
 sphinxcontrib.nwdiag \
 sphinxcontrib.blockdiag \
 sphinxcontrib.actdiag \
-pillow \
+"pillow<10" \
 sphinxcontrib-mermaid
 
 sudo curl -L \
