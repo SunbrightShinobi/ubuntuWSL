@@ -87,10 +87,15 @@ export CHROME_PATH=/usr/bin/chromium-browser
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.6/install.sh | bash
 source ~/.bashrc
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 nvm install 20
 nvm use 20
 node -v
+nvm alias default 20
 # Should show v20.x.x
+
 npm install -g puppeteer
 npm install -g @mermaid-js/mermaid-cli
 
