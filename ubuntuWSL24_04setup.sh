@@ -143,7 +143,8 @@ sphinxcontrib.nwdiag \
 sphinxcontrib.blockdiag \
 sphinxcontrib.actdiag \
 pillow==9.5.0 \
-sphinxcontrib-mermaid
+sphinxcontrib-mermaid \
+github-copilot-sdk
 
 export AIOHTTP_NO_EXTENSIONS=1
 echo 'export AIOHTTP_NO_EXTENSIONS=1' >> ~/sphinx311/bin/activate
