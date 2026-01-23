@@ -18,7 +18,8 @@ subversion \
 genisoimage \
 neofetch \
 openssh-client \
-nano
+nano \
+ca-certificates
 
 sudo apt upgrade -y \
 gcc \
