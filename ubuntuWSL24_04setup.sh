@@ -76,6 +76,9 @@ libfreetype6-dev \
 libjpeg-dev \
 zlib1g-dev
 
+wget https://api.gitkraken.dev/releases/production/linux/x64/active/gitkraken-amd64.deb
+sudo apt install ./gitkraken-amd64.deb
+
 pip install --no-binary :all: pillow
 
 export CHROME_PATH=/usr/bin/chromium-browser
