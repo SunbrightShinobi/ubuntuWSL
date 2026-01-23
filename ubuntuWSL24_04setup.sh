@@ -78,6 +78,8 @@ zlib1g-dev
 wget https://api.gitkraken.dev/releases/production/linux/x64/active/gitkraken-amd64.deb
 sudo apt install ./gitkraken-amd64.deb
 
+python3.11 -m venv ~/sphinx311 source ~/sphinx311/bin/activate
+
 pip install --no-binary :all: pillow
 
 export CHROME_PATH=/usr/bin/chromium-browser
@@ -99,8 +101,6 @@ sudo apt install -y python3.11 python3.11-venv python3.11-dev
 sudo apt update
 
 sudo snap install drawio
-
-python3.11 -m venv ~/sphinx311 source ~/sphinx311/bin/activate
 
 pip install --upgrade \
 pip \
