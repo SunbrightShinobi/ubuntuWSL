@@ -145,7 +145,7 @@ sphinxcontrib.seqdiag \
 sphinxcontrib.nwdiag \
 sphinxcontrib.blockdiag \
 sphinxcontrib.actdiag \
-"pillow<10" \
+pillow==9.5.0 \
 sphinxcontrib-mermaid
 
 
