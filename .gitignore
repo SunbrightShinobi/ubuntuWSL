@@ -2,3 +2,5 @@
 texput.log
 
 source/
+
+*.deb
