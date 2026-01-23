@@ -4,8 +4,8 @@ read -p "Enter email to use with Git Configuration: " email
 read -p "Enter Git Username to use with Git Configuration: " gitUserName
 
 sudo apt update -y
-sudo apt upgrade -y
 
+sudo apt upgrade -y \
 bash \
 bash-completion \
 coreutils \
@@ -33,14 +33,7 @@ libjpeg-dev \
 dvipng
 
 sudo apt upgrade -y \
-python3 \ .
-python3-full \ .
-python3-dev \ .
-python3-venv \ .
-python3-pip \ .
-cython3 \ .
-python3-numpy \ .
-python3-numpy-dev \
+python3-full \
 graphviz \
 openjdk-11-jre-headless \
 ghostscript \
@@ -149,10 +142,8 @@ sphinxcontrib.actdiag \
 pillow==9.5.0 \
 sphinxcontrib-mermaid
 
-
 export AIOHTTP_NO_EXTENSIONS=1
 echo 'export AIOHTTP_NO_EXTENSIONS=1' >> ~/sphinx311/bin/activate
-
 
 sudo curl -L \
 "http://mirrors.ctan.org/macros/latex/contrib/acrotex.zip" -o /tmp/acrotex.zip
