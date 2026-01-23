@@ -40,11 +40,21 @@ python3-pip \ .
 cython3 \ .
 python3-numpy \ .
 python3-numpy-dev \
-python3-pillow \
 graphviz \
 openjdk-11-jre-headless \
 ghostscript \
-fonts-dejavu
+fonts-dejavu \
+software-properties-common \
+build-essential \
+python3-dev python3-pip \
+libfreetype6-dev \
+libjpeg-dev z\
+lib1g-dev \
+liblcms2-dev \
+libopenjp2-7-dev \
+libtiff5-dev \
+tcl8.6-dev \
+tk8.6-dev
 
 sudo apt upgrade -y \
 texlive-latex-recommended \
@@ -62,15 +72,47 @@ desktop-file-utils \
 xvfb \
 plantuml \
 docker.io \
-snapd
+snapd \
+libfreetype6-dev \
+libjpeg-dev \
+zlib1g-dev \
+nodejs npm \
+chromium-browser \
+libfreetype6-dev \
+libjpeg-dev \
+zlib1g-dev
 
-sudo addgroup docker
-sudo usermod -a -G docker $USER
+pip install --no-binary :all: pillow
+
+export CHROME_PATH=/usr/bin/chromium-browser
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.6/install.sh | bash
+source ~/.bashrc
+
+nvm install 20
+nvm use 20
+node -v
+# Should show v20.x.x
+npm install -g puppeteer
+npm install -g @mermaid-js/mermaid-cli
+
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+
+sudo apt install -y python3.11 python3.11-venv python3.11-dev
+sudo apt update
 
 sudo snap install drawio
 
-sudo python3 -m pip install \
---upgrade --upgrade-strategy only-if-needed --ignore-installed --break-system-package \
+python3.11 -m venv ~/sphinx311 source ~/sphinx311/bin/activate
+
+pip install --upgrade \
+pip \
+wheel \
+setuptools \
+chardet
+
+pip install --upgrade \
 sphinx \
 sphinx-autobuild \
 sphinx-jinja \
@@ -105,6 +147,11 @@ sphinxcontrib.blockdiag \
 sphinxcontrib.actdiag \
 "pillow<10" \
 sphinxcontrib-mermaid
+
+
+export AIOHTTP_NO_EXTENSIONS=1
+echo 'export AIOHTTP_NO_EXTENSIONS=1' >> ~/sphinx311/bin/activate
+
 
 sudo curl -L \
 "http://mirrors.ctan.org/macros/latex/contrib/acrotex.zip" -o /tmp/acrotex.zip
