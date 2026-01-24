@@ -30,9 +30,7 @@ musl-dev \
 sed \
 zlib1g-dev \
 libjpeg-dev \
-dvipng
-
-sudo apt upgrade -y \
+dvipng \
 python3-full \
 graphviz \
 openjdk-11-jre-headless \
@@ -47,15 +45,11 @@ liblcms2-dev \
 libopenjp2-7-dev \
 libtiff5-dev \
 tcl8.6-dev \
-tk8.6-dev
-
-sudo apt upgrade -y \
+tk8.6-dev \
 texlive-latex-recommended \
 texlive-latex-extra \
 texlive-font-utils \
-latexmk
-
-sudo apt upgrade -y \
+latexmk \
 openssl \
 libicu74 \
 libkrb5-3 \
@@ -73,13 +67,11 @@ nodejs npm \
 chromium-browser \
 libfreetype6-dev \
 libjpeg-dev \
-zlib1g-dev
+zlib1g-dev \
+libfuse2
 
 wget https://api.gitkraken.dev/releases/production/linux/x64/active/gitkraken-amd64.deb
 sudo apt install ./gitkraken-amd64.deb
-
-python3.11 -m venv ~/sphinx311
-source ~/sphinx311/bin/activate
 
 pip install --no-binary :all: pillow
 
@@ -99,20 +91,26 @@ nvm alias default 20
 
 npm install -g puppeteer
 npm install -g @mermaid-js/mermaid-cli
+sudo npm install -g @mermaid-js/mermaid-cli
 
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 
-sudo apt install -y python3.11 python3.11-venv python3.11-dev
 sudo apt update
+sudo apt install python3.12 python3.12-venv python3.12-dev -y
 
-sudo snap install drawio
+cd ~
+python3.12 -m venv sphinx312
+source sphinx312/bin/activate
+
+wget https://github.com/jgraph/drawio-desktop/releases/download/v29.3.0/drawio-x86_64-29.3.0.AppImage -O drawio.AppImage
+chmod +x drawio.AppImage
+sudo mv drawio.AppImage /usr/local/bin/drawio
 
 pip install --upgrade \
 pip \
 wheel \
 setuptools \
-chardet
 
 pip install --upgrade \
 sphinx \
@@ -128,7 +126,6 @@ reportlab \
 colorama \
 xlsxwriter \
 pandas \
-vscod \
 tablib \
 ciscoconfparse \
 sphinxcontrib-jupyter \
@@ -149,7 +146,10 @@ sphinxcontrib.blockdiag \
 sphinxcontrib.actdiag \
 pillow==9.5.0 \
 sphinxcontrib-mermaid \
+charset-normalizer \
 github-copilot-sdk
+
+python -c "import charset_normalizer; print(charset_normalizer.__version__)"
 
 export AIOHTTP_NO_EXTENSIONS=1
 echo 'export AIOHTTP_NO_EXTENSIONS=1' >> ~/sphinx311/bin/activate
@@ -169,8 +169,15 @@ sudo ln -s \
 sudo rm -f \
 /tmp/acrotex.zip
 
-sudo rm -f \
-/tmp/draw.io.deb
+(type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
+	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
+	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+	&& cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+	&& sudo mkdir -p -m 755 /etc/apt/sources.list.d \
+	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+	&& sudo apt update \
+	&& sudo apt install gh -y
 
 sudo apt autoremove
 
@@ -186,3 +193,6 @@ git config --global user.email $email
 
 apt list --installed > ~/installedPackages.txt
 python3 -m pip list > ~/installedPython3Packages.txt
+
+cd ~
+git clone --recurse-submodules https://github.com/SunbrightShinobi/sphinx-manual.git
