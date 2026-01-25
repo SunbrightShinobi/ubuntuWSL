@@ -131,8 +131,6 @@ sphinxcontrib-jupyter \
 sphinxcontrib-confluencebuilder \
 pyyaml \
 yamlreader \
-sphinxcontrib-drawio \
-sphinxcontrib-drawio-html \
 sphinx-markdown-builder \
 sphinxcontrib-fulltoc \
 rinohtype \
