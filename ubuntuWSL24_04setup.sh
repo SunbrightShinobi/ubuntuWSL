@@ -33,7 +33,7 @@ libjpeg-dev \
 dvipng \
 python3-full \
 graphviz \
-openjdk-11-jre-headless \
+openjdk-17-jre \
 ghostscript \
 fonts-dejavu \
 software-properties-common \
@@ -68,8 +68,11 @@ chromium-browser \
 libfreetype6-dev \
 libjpeg-dev \
 zlib1g-dev \
-libfuse2
+libfuse2 \
+strace
 
+wget https://github.com/jgraph/drawio-desktop/releases/download/v29.3.0/drawio-amd64-29.3.0.deb
+sudo apt install ./drawio-amd64-29.3.0.deb
 wget https://api.gitkraken.dev/releases/production/linux/x64/active/gitkraken-amd64.deb
 sudo apt install ./gitkraken-amd64.deb
 
@@ -102,10 +105,6 @@ sudo apt install python3.12 python3.12-venv python3.12-dev -y
 cd ~
 python3.12 -m venv sphinx312
 source sphinx312/bin/activate
-
-wget https://github.com/jgraph/drawio-desktop/releases/download/v29.3.0/drawio-x86_64-29.3.0.AppImage -O drawio.AppImage
-chmod +x drawio.AppImage
-sudo mv drawio.AppImage /usr/local/bin/drawio
 
 pip install --upgrade \
 pip \
@@ -147,7 +146,9 @@ sphinxcontrib.actdiag \
 pillow==9.5.0 \
 sphinxcontrib-mermaid \
 charset-normalizer \
-github-copilot-sdk
+github-copilot-sdk \
+"setuptools<81"
+
 
 python -c "import charset_normalizer; print(charset_normalizer.__version__)"
 
