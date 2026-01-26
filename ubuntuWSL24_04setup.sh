@@ -145,7 +145,8 @@ pillow==9.5.0 \
 sphinxcontrib-mermaid \
 charset-normalizer \
 github-copilot-sdk \
-"setuptools<81"
+"setuptools<81" \
+furo
 
 
 python -c "import charset_normalizer; print(charset_normalizer.__version__)"
