@@ -147,8 +147,11 @@ sphinxcontrib-mermaid \
 charset-normalizer \
 github-copilot-sdk \
 "setuptools<81" \
-furo
+furo \
+pipx
 
+pipx ensurepath
+pipx install rst2pdf
 
 python -c "import charset_normalizer; print(charset_normalizer.__version__)"
 
