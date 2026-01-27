@@ -193,7 +193,7 @@ sudo git config --system lfs.activitytimeout 0
 sudo git config --system credential.helper 'cache --timeout 30000'
 git lfs install
 echo neofetch >> ~/.profile
-echo source sphinx312/bin/activate >> ~/.profile
+echo source /~sphinx312/bin/activate >> ~/.profile
 git config --global user.name $gitUserName
 git config --global user.email $email
 
