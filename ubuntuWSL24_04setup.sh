@@ -96,6 +96,7 @@ nvm alias default 20
 npm install -g puppeteer
 npm install -g @mermaid-js/mermaid-cli
 sudo npm install -g @mermaid-js/mermaid-cli
+sudo npm install -g @github/copilot
 
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
