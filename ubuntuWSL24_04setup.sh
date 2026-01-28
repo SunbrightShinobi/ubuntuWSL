@@ -98,7 +98,7 @@ npm install -g @mermaid-js/mermaid-cli
 sudo npm install -g @mermaid-js/mermaid-cli
 sudo npm install -g @github/copilot
 
-sudo add-apt-repository ppa:deadsnakes/ppa
+sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
 
 sudo apt update
@@ -184,7 +184,7 @@ sudo rm -f \
 	&& sudo apt update \
 	&& sudo apt install gh -y
 
-sudo apt autoremove
+sudo apt autoremove -y
 
 sudo git config --system core.autocrlf false
 sudo git config --system core.symlinks false
