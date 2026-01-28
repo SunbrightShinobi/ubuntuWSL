@@ -70,7 +70,8 @@ libjpeg-dev \
 zlib1g-dev \
 libfuse2 \
 strace \
-inkscape
+inkscape \
+podman
 
 wget https://github.com/jgraph/drawio-desktop/releases/download/v29.3.0/drawio-amd64-29.3.0.deb
 sudo apt install ./drawio-amd64-29.3.0.deb
