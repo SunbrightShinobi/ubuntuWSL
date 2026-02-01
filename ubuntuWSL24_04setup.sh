@@ -150,7 +150,8 @@ charset-normalizer \
 github-copilot-sdk \
 "setuptools<81" \
 furo \
-pipx
+pipx \
+yamlloaderS
 
 pipx ensurepath
 pipx install rst2pdf
