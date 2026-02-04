@@ -166,6 +166,13 @@ sudo curl -L \
 sudo unzip \
 /tmp/acrotex.zip -d /usr/share/texlive/texmf-dist/tex/latex/
 
+# Download the installer script to wherever you want to run it from
+curl -fsSL https://cdn.anythingllm.com/latest/installer.sh -o installer.sh
+ # Make the script executable
+chmod +x installer.sh
+ # Run the script
+./installer.sh
+
 cd /usr/share/texlive/texmf-dist/tex/latex/acrotex; sudo latex acrotex.ins
 cd /usr/share/texlive/texmf-dist/tex/latex/acrotex; sudo mktexlsr
 
