@@ -151,7 +151,9 @@ github-copilot-sdk \
 "setuptools<81" \
 furo \
 pipx \
-yamlloaderS
+yamlloader \
+sphinx-needs[plotting] \
+reqif
 
 pipx ensurepath
 pipx install rst2pdf
