@@ -77,6 +77,7 @@ wget https://github.com/jgraph/drawio-desktop/releases/download/v29.3.0/drawio-a
 sudo apt install ./drawio-amd64-29.3.0.deb
 wget https://api.gitkraken.dev/releases/production/linux/x64/active/gitkraken-amd64.deb
 sudo apt install ./gitkraken-amd64.deb
+code
 
 pip install --no-binary :all: pillow
 
@@ -168,13 +169,6 @@ sudo curl -L \
 sudo unzip \
 /tmp/acrotex.zip -d /usr/share/texlive/texmf-dist/tex/latex/
 
-# Download the installer script to wherever you want to run it from
-curl -fsSL https://cdn.anythingllm.com/latest/installer.sh -o installer.sh
- # Make the script executable
-chmod +x installer.sh
- # Run the script
-./installer.sh
-
 cd /usr/share/texlive/texmf-dist/tex/latex/acrotex; sudo latex acrotex.ins
 cd /usr/share/texlive/texmf-dist/tex/latex/acrotex; sudo mktexlsr
 
@@ -199,6 +193,13 @@ sudo rm -f \
 #install claude ai
 sudo snap install claudeai-desktop
 
+# Download the AnythingLLMinstaller script to wherever you want to run it from
+curl -fsSL https://cdn.anythingllm.com/latest/installer.sh -o installer.sh
+ # Make the script executable
+chmod +x installer.sh
+ # Run the script
+./installer.sh
+
 sudo apt autoremove -y
 
 sudo git config --system core.autocrlf false
@@ -214,6 +215,10 @@ git config --global user.email $email
 
 apt list --installed > ~/installedPackages.txt
 python3 -m pip list > ~/installedPython3Packages.txt
+
+ssh-keygen -t ed25519 -C "joshua.johnson3@outlook.com"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
 
 cd ~
 git clone --recurse-submodules https://github.com/SunbrightShinobi/sphinx-manual.git
