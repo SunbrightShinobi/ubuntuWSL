@@ -222,3 +222,6 @@ cat ~/.ssh/id_ed25519.pub
 
 cd ~
 git clone --recurse-submodules https://github.com/SunbrightShinobi/sphinx-manual.git
+git clone https://github.com/EnTechGR/system-monitor.git
+cd ~/system-monitor
+./monitor
