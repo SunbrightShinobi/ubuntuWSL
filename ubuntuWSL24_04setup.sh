@@ -110,13 +110,15 @@ cd ~
 python3.12 -m venv sphinx312
 source sphinx312/bin/activate
 
+#cant use latest setuptools due to seqdiag
 pip install --upgrade \
 pip \
 wheel \
-setuptools \
+"setuptools<81"
 
+#can't use latest pillow due to error with actdiag
 pip install --upgrade \
-sphinx \
+sphinx==9.1.0 \
 sphinx-autobuild \
 sphinx-jinja \
 netaddr \
@@ -145,11 +147,10 @@ sphinxcontrib.seqdiag \
 sphinxcontrib.nwdiag \
 sphinxcontrib.blockdiag \
 sphinxcontrib.actdiag \
-pillow==9.5.0 \
+"pillow==9.5.0" \ 
 sphinxcontrib-mermaid \
 charset-normalizer \
 github-copilot-sdk \
-"setuptools<81" \
 furo \
 pipx \
 yamlloader \
@@ -192,13 +193,6 @@ sudo rm -f \
 
 #install claude ai
 sudo snap install claudeai-desktop
-
-# Download the AnythingLLMinstaller script to wherever you want to run it from
-curl -fsSL https://cdn.anythingllm.com/latest/installer.sh -o installer.sh
- # Make the script executable
-chmod +x installer.sh
- # Run the script
-./installer.sh
 
 sudo apt autoremove -y
 
