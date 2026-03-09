@@ -73,8 +73,8 @@ strace \
 inkscape \
 podman
 
-wget https://github.com/jgraph/drawio-desktop/releases/download/v29.3.0/drawio-amd64-29.3.0.deb
-sudo apt install ./drawio-amd64-29.3.0.deb
+wget https://github.com/jgraph/drawio-desktop/releases/download/v29.6.1/drawio-amd64-29.6.1.deb
+sudo apt install ./drawio-amd64-29.6.1.deb
 wget https://api.gitkraken.dev/releases/production/linux/x64/active/gitkraken-amd64.deb
 sudo apt install ./gitkraken-amd64.deb
 code
@@ -192,7 +192,7 @@ sudo rm -f \
 	&& sudo apt install gh -y
 
 #install claude ai
-sudo snap install claudeai-desktop
+npm install -g @anthropic-ai/claude-code
 
 sudo apt autoremove -y
 
