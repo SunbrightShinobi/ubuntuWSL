@@ -6,6 +6,7 @@ read -p "Enter Git Username to use with Git Configuration: " gitUserName
 sudo apt update -y
 
 sudo apt upgrade -y \
+make \
 bash \
 bash-completion \
 coreutils \
